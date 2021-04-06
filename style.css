@@ -1,0 +1,201 @@
+body
+{
+	
+	background-color: #383838;
+	font-family: myroboto;
+	font-size: 1.2em;
+	color: white;
+}
+
+header
+{
+	/*background: url("images/elf&mer.png") no-repeat left,
+				url("images/japon2.png") no-repeat right;
+	background-size: contain;
+	text-align: center;*/
+	/*background-image: url("images/topo2.png");*/
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0 50px 0 50px;
+	align-items: center;
+}
+
+#title
+{
+	display: flex;
+	flex-direction: row;
+}
+
+#title img
+{
+	width: 50px;
+	height: 50px;
+	align-self: center;
+}
+
+nav
+{
+	width: 100%;
+	font-size: 0.75em;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#nav_links
+{
+	background-color: #252525;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+h1
+{
+	width: 200px;
+	margin-left: 3%;
+	font-size: 2em;
+}
+
+h2
+{
+	padding-bottom: 5px;
+	border-bottom: 3px solid rgb(200, 200, 200);
+}
+
+nav a:hover
+{
+	transition: background-color .25s;
+	background-color: rgba(150, 150, 150, .4);
+	opacity: 1;
+}
+
+a
+{
+	color: white;
+	text-decoration: none;
+}
+
+nav a
+{
+	border-radius: 10px;
+	padding: 5px;
+	transition: background-color .25s;
+	font-size: 1.8em;
+	opacity: 0.75;
+}
+
+a:visited
+{
+	color: white;
+}
+
+#download
+{
+	transition: background-color .25s;
+	background-color: #303030;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+#download:hover
+{
+	transition: background-color .25s;
+	background-color: #505050;
+}
+
+section
+{
+	margin: 50px auto 50px auto;
+	width: 80%;
+	text-align: justify;
+}
+
+ul
+{	
+	display: flex;
+	list-style-type: none;
+	flex-direction: column;
+}
+
+#membres
+{
+	margin: auto;
+
+	flex-wrap: nowrap;
+	grid-gap: 15px;
+}
+
+.personne
+{
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#outils
+{
+	margin: auto;
+	padding: auto;
+	width: 90%;
+}
+
+.links_content
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	text-align: center;
+}
+
+.links_content a
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+div a img
+{
+	width: 250px;
+	height: auto;
+}
+
+.personne img
+{
+	--index: 0;
+	position: relative;
+	object-fit: contain;
+	border-radius: 50px;
+	animation: slidein 2s ease-out both;
+	animation-delay: calc(0.2s * var(--index));
+}
+
+.introduction
+{
+	margin: auto;
+	margin-left: 20px;
+	text-align: center;
+}
+
+
+@keyframes slidein
+{
+	from {
+		left: -400px;
+		transform: rotate(-360deg);
+	}
+	to {
+		left: 0;
+		transform: rotate(0deg);
+	}
+}
+
+@font-face
+{
+	font-family: myroboto;
+	src: url("Roboto/Roboto-Regular.ttf");
+}
