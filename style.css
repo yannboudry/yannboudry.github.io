@@ -143,8 +143,12 @@ ul
 	width: 90%;
 }
 
+
 .links_content
 {
+	padding-top: 30px;
+	background-color: #424242;
+	border-radius: 15px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
@@ -172,6 +176,30 @@ div a img
 	border-radius: 50px;
 	animation: slidein 2s ease-out both;
 	animation-delay: calc(0.2s * var(--index));
+}
+
+#files_list
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: left;
+}
+
+.files
+{
+	transition: background-color .25s;
+	background-color: #424242;
+	border-radius: 15px;
+	margin: auto;
+	padding: 10px;
+	align-self: middle;
+}
+
+.files:hover
+{
+	transition: background-color .25s;
+	background-color: #606060;
 }
 
 .introduction
