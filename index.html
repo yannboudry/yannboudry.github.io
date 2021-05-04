@@ -25,9 +25,81 @@
 	</header>
 	
 
-	<section>
-		<h2>Formation du groupe</h2>
-		<p>Notre groupe s’est formé naturellement avec la classe S4E, la classe éphémère regroupant  les élèves  censés partir à l’étranger. Les membres du groupe Elfes&Mer sont: Yann Boudry notre chef de projet, ainsi que Azéline Aillet, Pierre-Corentin Auger, Vincent Libeskind et Scott Tallec. La classe étant seulement composée de 7 personnes, nous nous sommes très vite entendus, ce qui a mis une bonne ambiance dans le groupe.  Malgré notre répartition dans différentes classes, nous essayons de faire plusieurs réunions afin de parler de l’avancement de chacun, et de mettre en communs les parties qui sont liées.</p>
+	<section id="story_line">
+		<div>
+			<h2>La modélisation</h2>
+			<div class="story_images">
+				<figure class="story_photo_mono">
+					<img src="images/modelisation.png" alt="modelisation">
+					<figcaption>Modélisation des lignes topographiques</figcaption>
+				</figure>
+			</div>
+			<p>La dernière étape est la modélisation des lignes obtenues avec leurs altitudes respectives, pour cela nous avons utilisé l'API OpenGL qui ouvre une seconde fenêtre. Dans celle-ci est dessinée la modélisation du monde 3D obtenu. Le déplacement dans ce monde se fait grâce à la souris et aux touches "W" "A" "S" D" ainsi que "I" et "K".</p>
+		</div>
+		<div>
+			<h2>L'interface</h2>
+			<div class="story_images">
+				<figure class="story_photo_mono">
+					<img src="images/main_screen.png" alt="photo_mono">
+					<figcaption>L'interface graphique réalisée avec GTK</figcaption>
+				</figure>
+			</div>
+			<p>L'interface graphique va permettre de lier tous les éléments de l'application pour une exécution fluide et ordonnée. Elle propose plusieurs fonctionnalités tels que le zoom et la rotation des images. On charge l'image avec le premier bouton, puis on lance l'éxecution totale ou en pas à pas si l'on souhaite voir les image intermédiaire comme celles montrées dans les sections ci-dessous.</p>
+		</div>
+		<div>
+			<h2>Attribution de l'altitude</h2>
+			<div class="story_images">
+				<figure>
+					<img src="images/holes.png" alt="lignes topo">
+					<figcaption>Les lignes extraites et reconstuites</figcaption>
+				</figure>
+				<figure>
+					<img src="images/elevation2.png" alt="altitude couleurs">
+					<figcaption>Chaque couleur représente une altitude</figcaption>
+				</figure>
+			</div>
+			<p>Il faut maintenant passer à l'attribution de l'altitude avec l'image traitée et réparée. La ou les zones les plus hautes vont être récupérées simplement car elle n'ont qu'une zone voisine. A partir de celles-là, on passe au zones suivant en réduisant l'altitude à chaque fois. Le résultats est ci-dessus à droite, l'altitude la plus haute correspond à la couleur la plus chaude et l'altitude la plus basse à la couleur la plus froide.</p>
+		</div>
+		<div>
+			<h2>Reconstruction des lignes</h2>
+			<div class="story_images">
+				<figure>
+					<img src="images/neigh.jpg" alt="neighbors">
+					<figcaption>En rouge les bouts de lignes</figcaption>
+				</figure>
+				<figure>
+					<img src="images/holes.png" alt="holes">
+					<figcaption>Lignes reconstruites en reliant les bouts</figcaption>
+				</figure>
+			</div>
+			<p>L'extraction ne permet malheureusement pas d'avoir un résultat exploitable imédiatement car il y a de nombreuses imperfections sur la carte. De plus du texte ou autre contenu peut venir cacher les lignes à extraire. Il faut donc reconstruire les segments perdus. Un algorithme trouve tous les bouts de lignes sur l'image et les stocke. Un autre récupère ces points et va les relier de manière à ne pas avoir de lignes aberrante.</p>
+		</div>
+		<div>
+			<h2>Filtrage de la carte</h2>
+			<div class="story_images">
+				<figure>
+					<img src="images/map_ign_2.png" alt="map_ign_2">
+					<figcaption>Carte originale</figcaption>
+				</figure>
+				<figure>
+					<img src="images/topo.png">
+					<figcaption>Lignes topographiques</figcaption>
+				</figure>
+				<figure>
+					<img src="images/river.png">
+					<figcaption>Rivières</figcaption>
+				</figure>
+				<figure>
+					<img src="images/road.png">
+					<figcaption>Routes</figcaption>
+				</figure>
+			</div>
+			<p>La première étape consiste à extraire les ligne topographique de l'image pour pouvoir les traiter. Nous avons opté pour un filtrage par couleur car les lignes sont généralemnt facilement discernable. Pour enrichir le rendu final, les autres informations telles que les rivières ou les routes sont aussi extraites dans d'autres images à part.</p>
+		</div>
+		<div>
+			<h2>Formation du groupe</h2>
+			<p>Notre groupe s’est formé naturellement avec la classe S4E, la classe éphémère regroupant  les élèves  censés partir à l’étranger. Les membres du groupe Elfes&Mer sont: Yann Boudry notre chef de projet, ainsi que Azéline Aillet, Pierre-Corentin Auger, Vincent Libeskind et Scott Tallec. La classe étant seulement composée de 7 personnes, nous nous sommes très vite entendus, ce qui a mis une bonne ambiance dans le groupe.  Malgré notre répartition dans différentes classes, nous essayons de faire plusieurs réunions afin de parler de l’avancement de chacun, et de mettre en communs les parties qui sont liées.</p>
+		</div>
 	</section>
 
 	<footer>

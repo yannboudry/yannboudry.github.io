@@ -113,6 +113,34 @@ section
 	text-align: justify;
 }
 
+#story_line
+{
+	display: flex;
+	flex-direction: column;
+}
+
+.story_images
+{
+	display: flex;
+	justify-content: space-around;
+}
+
+.story_photo_mono
+{
+	width: 50%;
+}
+
+#story_line div div figure
+{
+	margin: 5px;
+	text-align: center;
+}
+
+#story_line div div figure img
+{
+	width: 100%;
+}
+
 ul
 {	
 	display: flex;
@@ -178,6 +206,14 @@ div a img
 	width: 150px;
 	object-fit: contain;
 	border-radius: 50px;
+	animation: slidein 2s ease-out both;
+	animation-delay: calc(0.2s * var(--index));
+}
+
+.personne p
+{
+	--index: 0;
+	position: relative;
 	animation: slidein 2s ease-out both;
 	animation-delay: calc(0.2s * var(--index));
 }
