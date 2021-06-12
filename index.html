@@ -27,6 +27,97 @@
 
 	<section id="story_line">
 		<div>
+			<h2>Interface 2.0</h2>
+			<div class="story_images">
+				<figure class="story_photo_mono">
+					<img src="images/main_screen2.png">
+					<figcaption>Interface améliorée</figcaption>
+				</figure>
+			</div>
+			<div class="story_images" id="interface2">
+				<figure class="color_pick">
+					<img src="images/pick_colors.png">
+					<img src="images/color_picker.png">
+					<figcaption>Choix des couleurs en mode manuel</figcaption>
+				</figure>
+				<figure class="color_pick">
+					<img src="images/topo_rectif.png">
+					<figcaption>Correction de l'altitude</figcaption>
+				</figure>
+			</div>
+			<p>L'interface permet d'accéder à de nouvelles fonctionalité de l'application telles que le choix de l'analyse automatique qui détecte les couleurs à extraire, ou manuel qui demande de choisir les couleurs. Une exécution en pas à pas permet d'afficher les images intermédiaire qui ont été générées et de revenir aux précédentes. La rectification de l'altitude prends aussi place ici et finalement la modélisation ouvre la fenêtre de rendu 3D.</p>
+		</div>
+
+
+		<div>
+			<h2>Changement d'altitude manuel</h2>
+			<div class="story_images">
+				<figure>
+					<img src="images/elevation2_avant.png">
+					<figcaption>Carte d'altitude générée</figcaption>
+				</figure>
+				<figure>
+					<img src="images/elevation2_apres.png">
+					<figcaption>Correction de l'altitude</figcaption>
+				</figure>
+			</div>
+			<p>L’algorithme de ré-attribution du relief permet donc de modifier l’altitude d’une zone en récupérant les coordonnées <em>x</em> et <em>y</em> d’un point de celle-ci ainsi que la nouvelle altitude définie par l’utilisateur. Elle possède deux modes: un mode manuel qui modifie seulement l’altitude de la zone souhaitée et un mode automatique qui ajuste automatiquement les zones voisines de façon cohérente en plus de modifier l’altitude de la zone sélectionnée.</p>
+		</div>
+
+
+		<div>
+			<h2>Reconstruction 2.0</h2>
+			<div class="story_images">
+				<figure>
+					<figcaption>Avant</figcaption>
+					<img src="images/holes2.png">
+					<img src="images/holes3.png">
+					<figcaption>Avant</figcaption>
+				</figure>
+				<figure>
+					<figcaption>Après</figcaption>
+					<img src="images/holes2.1.png">
+					<img src="images/holes3.1.png">
+					<figcaption>Après</figcaption>
+				</figure>
+			</div>
+			<p>La reconstruction des lignes a été améliorée pour éviter les boucles involontaires et parasites. Elle se fait maintenant de manière récursive et ne connecte deux points de fin de lignes uniquement s'ils sont respectivement le point le plus proche de l'autre. Cela permet d'empêcher la fusion de plusieures lignes topographiques trop rapprochées.</p>
+		</div>
+
+
+		<div>
+			<h2>Extraction 2.0</h2>
+			<div id="extract2_images_list">
+				<figure class="extract2">
+					<img src="images/map_2.png">
+					<figcaption>Carte originale</figcaption>
+				</figure>
+				<figure class="extract2">
+					<img src="images/road_major.png">
+					<figcaption>Routes régionales</figcaption>
+				</figure>
+				<figure class="extract2">
+					<img src="images/road_minor.png">
+					<figcaption>Routes non classées</figcaption>
+				</figure>
+				<figure class="extract2">
+					<img src="images/trail.png">
+					<figcaption>Sentiers</figcaption>
+				</figure>
+				<figure class="extract2">
+					<img src="images/river_2.png">
+					<figcaption>Rivières</figcaption>
+				</figure>
+				<figure class="extract2">
+					<img src="images/ign.png">
+					<figcaption>Extraction colorisée</figcaption>
+				</figure>
+			</div>
+			<p>Lors de l’étude des cartes IGN, il nous a semblé permettant d’extraire également les sentiers ainsi que de différencier deux types de routes : les routes locales ainsi que les routes non classées. En effet, ces deux types de routes sont facilement distinguables et présents sur la plupart de nos cartes. En dernier lieu, une image récapitule toutes les informations qui ont été extraites avec une mise en couleur de celles-ci.</p>
+		</div>
+
+
+		<div>
 			<h2>La modélisation</h2>
 			<div class="story_images">
 				<figure class="story_photo_mono">
@@ -36,6 +127,8 @@
 			</div>
 			<p>La dernière étape est la modélisation des lignes obtenues avec leurs altitudes respectives, pour cela nous avons utilisé l'API OpenGL qui ouvre une seconde fenêtre. Dans celle-ci est dessinée la modélisation du monde 3D obtenu. Le déplacement dans ce monde se fait grâce à la souris et aux touches "W" "A" "S" D" ainsi que "I" et "K".</p>
 		</div>
+		
+
 		<div>
 			<h2>L'interface</h2>
 			<div class="story_images">
@@ -46,6 +139,8 @@
 			</div>
 			<p>L'interface graphique va permettre de lier tous les éléments de l'application pour une exécution fluide et ordonnée. Elle propose plusieurs fonctionnalités tels que le zoom et la rotation des images. On charge l'image avec le premier bouton, puis on lance l'éxecution totale ou en pas à pas si l'on souhaite voir les image intermédiaire comme celles montrées dans les sections ci-dessous.</p>
 		</div>
+		
+
 		<div>
 			<h2>Attribution de l'altitude</h2>
 			<div class="story_images">
@@ -54,12 +149,14 @@
 					<figcaption>Les lignes extraites et reconstuites</figcaption>
 				</figure>
 				<figure>
-					<img src="images/elevation2.png" alt="altitude couleurs">
+					<img src="images/elevation1.png" alt="altitude couleurs">
 					<figcaption>Chaque couleur représente une altitude</figcaption>
 				</figure>
 			</div>
 			<p>Il faut maintenant passer à l'attribution de l'altitude avec l'image traitée et réparée. La ou les zones les plus hautes vont être récupérées simplement car elle n'ont qu'une zone voisine. A partir de celles-là, on passe au zones suivant en réduisant l'altitude à chaque fois. Le résultats est ci-dessus à droite, l'altitude la plus haute correspond à la couleur la plus chaude et l'altitude la plus basse à la couleur la plus froide.</p>
 		</div>
+		
+
 		<div>
 			<h2>Reconstruction des lignes</h2>
 			<div class="story_images">
@@ -74,6 +171,8 @@
 			</div>
 			<p>L'extraction ne permet malheureusement pas d'avoir un résultat exploitable imédiatement car il y a de nombreuses imperfections sur la carte. De plus du texte ou autre contenu peut venir cacher les lignes à extraire. Il faut donc reconstruire les segments perdus. Un algorithme trouve tous les bouts de lignes sur l'image et les stocke. Un autre récupère ces points et va les relier de manière à ne pas avoir de lignes aberrante.</p>
 		</div>
+		
+
 		<div>
 			<h2>Filtrage de la carte</h2>
 			<div class="story_images">
@@ -96,6 +195,8 @@
 			</div>
 			<p>La première étape consiste à extraire les ligne topographique de l'image pour pouvoir les traiter. Nous avons opté pour un filtrage par couleur car les lignes sont généralemnt facilement discernable. Pour enrichir le rendu final, les autres informations telles que les rivières ou les routes sont aussi extraites dans d'autres images à part.</p>
 		</div>
+		
+
 		<div>
 			<h2>Formation du groupe</h2>
 			<p>Notre groupe s’est formé naturellement avec la classe S4E, la classe éphémère regroupant  les élèves  censés partir à l’étranger. Les membres du groupe Elfes&Mer sont: Yann Boudry notre chef de projet, ainsi que Azéline Aillet, Pierre-Corentin Auger, Vincent Libeskind et Scott Tallec. La classe étant seulement composée de 7 personnes, nous nous sommes très vite entendus, ce qui a mis une bonne ambiance dans le groupe.  Malgré notre répartition dans différentes classes, nous essayons de faire plusieurs réunions afin de parler de l’avancement de chacun, et de mettre en communs les parties qui sont liées.</p>

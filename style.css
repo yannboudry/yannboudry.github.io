@@ -130,6 +130,29 @@ section
 	width: 50%;
 }
 
+#extract2_images_list
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.extract2
+{
+	width: 32%;
+}
+
+#interface2
+{
+	align-items: center;
+}
+
+.color_pick
+{
+	width: 30%;
+}
+
 #story_line div div figure
 {
 	margin: 5px;
