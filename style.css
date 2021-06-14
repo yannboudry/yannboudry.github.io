@@ -171,6 +171,22 @@ ul
 	flex-direction: column;
 }
 
+#librairies
+{
+	all: unset;
+	margin-left: 2%;
+}
+
+.libs
+{
+	text-decoration: underline;
+}
+
+.libs:visited
+{
+	text-decoration: underline;
+}
+
 #membres
 {
 	margin: 50px auto auto auto;
